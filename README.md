@@ -1,12 +1,12 @@
 # tuxbackup
 A Quick Bash Shell Script To Backup Data to Remote NFS Share or SSH Server
 
-# Installation
-   **sudo apt-get install msmtp msmtp-mta ca-certificates mutt nfs-common bzip2 -y**
+# Installation / Requirements
+   sudo apt-get install msmtp msmtp-mta ca-certificates mutt nfs-common bzip2 -y
    
-   **mkdir -p /etc/jtuxbackup/ssh-keys &&  ssh-keygen -f /etc/jtuxbackup/ssh-keys/jtuxbackup-light-sshkey**
+   mkdir -p /etc/jtuxbackup/ssh-keys &&  ssh-keygen -f /etc/jtuxbackup/ssh-keys/jtuxbackup-light-sshkey
    
-   **chmod +x jtuxbackup.sh**
+   chmod +x jtuxbackup.sh
 
 
 
@@ -15,18 +15,24 @@ A Quick Bash Shell Script To Backup Data to Remote NFS Share or SSH Server
     
 
 
-# Edit The configuration file and Enable What You Need
+# Edit the main configuration file and enable what you need
     nano /etc/jtuxbackup/jtuxbackup.sh.conf
 
 
 
-# If You Wish to Backup MySQL/MariaDB. Run Query in MySQL/MariaDB
+# If you want to backup MySQL/MariaDB. Run query below
    *CREATE USER 'dbbackupusr'@'localhost' IDENTIFIED BY 'ComplexPassword';*
    *GRANT ALL ON *.*  TO 'jdbbackupusr'@'localhost;*
    *FLUSH PRIVILEGES;*
    *EXIT;* 
 
 
+# If you want email notifications
+    nano /etc/msmtprc
+    
+    nano /etc/mailrc
+    
+    
 
 # Create Cron Job
    crontab -e
