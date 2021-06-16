@@ -41,3 +41,14 @@ A Quick Bash Shell Script To Backup Data to Remote NFS Share or SSH Server
 
 # Add A Job To Run At midnight
    0 1 * * *  /usr/bin/jtuxbackup.sh backup "/etc/jtuxbackup.sh/jtuxbackup.sh.conf" ###at midnight every day
+   
+   
+   
+# Quick NFS Server  Installation (Ubuntu)
+   sudo apt-get update && sudo apt-get install nfs-kernel-server && sudo apt-get install nfs-common && mkdir  -p /data/NFS && chmod 666 /data/NFS
+
+   nano  /etc/exports
+   
+   -add the line below-
+   
+      /data/NFS       192.168.56.0/24(rw,sync,no_root_squash,no_subtree_check)
