@@ -1,3 +1,5 @@
+<a href="https://www.buymeacoffee.com/jamesjsakala" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 # tuxbackup
 A Quick Bash Shell Script To Backup Data to Remote NFS Share or SSH Server
 
